@@ -1,12 +1,14 @@
 import EventHub from "../src/index";
 
-const test1 = (message) => {
+type TestCase = (message: string) => void;
+
+const test1: TestCase = (message) => {
   const eventHub = new EventHub();
   console.assert(eventHub instanceof Object);
   console.log(message);
 };
 
-const test2 = (message) => {
+const test2: TestCase = (message) => {
   const eventHub = new EventHub();
   const originData = "123123";
   let flag = false;
@@ -21,7 +23,7 @@ const test2 = (message) => {
   console.log(message);
 };
 
-const test3 = (message) => {
+const test3: TestCase = (message) => {
   const eventHub = new EventHub();
   let flag = false;
   let fn = () => {
